@@ -1,0 +1,110 @@
+
+@layer components {
+  .interactive-card {
+    @apply glass-card rounded-xl p-6 transition-all duration-300 ease-out;
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 40px -5px hsl(var(--primary) / 0.25), 0 0 0 1px hsl(var(--primary)/0.4);
+    border-color: hsl(var(--primary)/0.4);
+  }
+
+  .skill-tag {
+    @apply px-4 py-2 rounded-lg text-sm font-medium bg-secondary/15 text-secondary hover:bg-secondary/25 hover:text-secondary-foreground transition-all duration-300 cursor-default;
+    border: 1px solid hsl(var(--secondary)/0.3);
+  }
+  .skill-tag:hover {
+     box-shadow: 0 0 15px hsl(var(--secondary)/0.3);
+  }
+
+
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 gradient-text tracking-tight text-center;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl font-medium mb-10 md:mb-16 text-foreground/80 text-center max-w-3xl mx-auto leading-relaxed;
+  }
+
+  .timeline-marker {
+    @apply relative pl-12 pb-12 border-l-2 border-primary/40;
+  }
+
+  .timeline-marker::before {
+    content: "";
+    @apply absolute w-6 h-6 rounded-full bg-primary -left-[13px] top-0 border-[5px] border-background;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.6);
+  }
+  .timeline-marker:last-child {
+    @apply border-l-2 border-transparent pb-0;
+  }
+
+
+  .nav-item {
+    @apply relative px-3 py-2 text-foreground/70 hover:text-foreground transition-colors duration-300 font-medium text-base;
+  }
+
+  .nav-item::after {
+    content: "";
+    @apply absolute left-1/2 bottom-0 w-0 h-[3px] bg-gradient-to-r from-primary to-accent transition-all duration-300 ease-out rounded-full;
+    transform: translateX(-50%);
+  }
+
+  .nav-item:hover::after,
+  .nav-item.active::after {
+    @apply w-3/4;
+  }
+  .nav-item.active {
+    @apply text-foreground;
+  }
+
+
+  .scroll-prompt {
+    @apply absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300;
+    animation: bounceUpDown 2.8s infinite ease-in-out;
+  }
+
+  .project-display-card {
+    @apply relative overflow-hidden rounded-2xl glass-card transition-all duration-500 ease-in-out;
+    box-shadow: 0 0 0 1px hsl(var(--border)/0.2);
+  }
+  
+  .project-display-card:hover {
+     transform: scale(1.03);
+     box-shadow: 0 12px 35px hsl(var(--primary)/0.25), 0 0 0 2px hsl(var(--primary)/0.4);
+  }
+
+  .project-overlay-content {
+    @apply absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 via-black/60 to-transparent opacity-0 transition-opacity duration-300 ease-in-out;
+  }
+  .group:hover .project-overlay-content {
+    @apply opacity-100;
+  }
+
+
+  .certificate-display-card {
+    @apply relative overflow-hidden rounded-2xl glass-card p-6 transition-all duration-300 ease-in-out;
+  }
+  
+  .certificate-display-card:hover {
+    @apply border-accent/60 transform scale-1.03;
+    box-shadow: 0 10px 30px hsl(var(--accent)/0.2);
+  }
+  .certificate-display-card::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-br from-accent/5 via-secondary/5 to-primary/5 opacity-0 transition-opacity duration-500;
+  }
+  .group:hover .certificate-display-card::before {
+    @apply opacity-100;
+  }
+
+
+  .form-input-field {
+    @apply w-full p-4 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 placeholder-muted-foreground/60 text-foreground text-base;
+  }
+
+  .form-textarea-field {
+    @apply form-input-field min-h-[140px] resize-none;
+  }
+}

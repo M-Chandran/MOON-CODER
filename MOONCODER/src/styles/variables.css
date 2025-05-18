@@ -1,0 +1,33 @@
+@layer base {
+  :root {
+    --background: 222 84% 4.9%; /* Midnight Blue */
+    --foreground: 210 40% 98%; /* Almost White */
+    
+    --card: 222 80% 8%; /* Darker Midnight Blue for cards */
+    --card-foreground: 210 40% 96%;
+    
+    --popover: 222 80% 6%;
+    --popover-foreground: 210 40% 96%;
+    
+    --primary: 260 100% 65%; /* Electric Indigo */
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 180 100% 45%; /* Vivid Cyan */
+    --secondary-foreground: 222 84% 4.9%;
+    
+    --muted: 217 32.6% 17.5%; /* Muted Indigo */
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 330 100% 55%; /* Neon Pink */
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 72.2% 50.6%; /* Bright Crimson */
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 32.6% 17.5%; /* Muted Indigo for borders */
+    --input: 217 32.6% 12.5%; /* Darker Muted Indigo for inputs */
+    --ring: 260 100% 75%; /* Lighter Electric Indigo for rings */
+    
+    --radius: 0.8rem; 
+  }
+}

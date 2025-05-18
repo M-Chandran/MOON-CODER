@@ -1,0 +1,62 @@
+@layer utilities {
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes auroraBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animated-aurora-bg {
+    background: linear-gradient(-45deg, 
+      hsl(var(--primary) / 0.15), 
+      hsl(var(--secondary) / 0.15),
+      hsl(var(--accent) / 0.15),
+      hsl(var(--primary) / 0.15)
+    );
+    background-size: 400% 400%;
+    animation: auroraBG 25s ease infinite;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(100px);
+  }
+
+
+  @keyframes bounceUpDown {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50% { transform: translateY(-12px) translateX(-50%); }
+  }
+
+  .animated-bg {
+    background: hsl(var(--background));
+    position: relative;
+    overflow: hidden;
+  }
+  .animated-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at top left, hsl(var(--primary)/0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at top right, hsl(var(--secondary)/0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom left, hsl(var(--accent)/0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(var(--primary)/0.15) 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite alternate;
+    z-index: 0;
+    opacity: 0.7;
+  }
+
+  @keyframes subtleShine {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
